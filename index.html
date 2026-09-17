@@ -711,6 +711,8 @@ function makeCard(m){
   const face=["#FFFFFF","#FFFFFF","#FFF3C4","#FFE79A","#FFD447","#F6BE2C","#E0A21C"];
   t7arcade(x,m,CW/2,74,11,face,OUTLINE,"c");
   t7arcade(x,"METERS",CW/2,176,3,"#FFFFFF",OUTLINE,"c");
+  t7arcade(x, m>=S.best ? "NEW RECORD!" : "BEST "+S.best+"M", CW/2,192,2,
+    m>=S.best?"#FFD447":"rgba(255,255,255,.6)",OUTLINE,"c");
 
   const cells=Math.max(0,Math.min(10,Math.round(m/20)));
   for(let i=0;i<10;i++){const rx=34+i*30;
@@ -837,6 +839,9 @@ function paintTitle(now){
   const alpha=0.5+Math.sin(titleTime*3)*0.3;
   t7arcade(tg,"TAP TO FALL",TW/2,TH-40,3,
     "rgba(255,255,255,"+alpha+")",OUTLINE,"c");
+
+  // record actuel (si un a déjà été établi)
+  if(S.best>0) t7arcade(tg,"BEST "+S.best+"M",TW/2,TH-22,2,"#FFD447",OUTLINE,"c");
 
   if(S.phase==="intro") titleAnim=requestAnimationFrame(paintTitle);
 }
