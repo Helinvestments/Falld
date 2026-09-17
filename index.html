@@ -707,8 +707,7 @@ function makeCard(m){
     x.fillStyle=rgb(P.grit);x.fillRect(WB-7,y+9,3,2);x.fillRect(CW-WB+4,y+11,3,2);}
   x.fillStyle=OUTLINE;x.fillRect(WB-1,0,1,CH);x.fillRect(CW-WB,0,1,CH);
 
-  t7arcade(x,"FALLD",CW/2,26,3,GOLD,OUTLINE,"c");
-  t7arcade(x, m>=S.best ? "NEW RECORD!" : "BEST "+S.best+"M", CW/2,54,2,
+  t7arcade(x, m>=S.best ? "NEW RECORD!" : "BEST "+S.best+"M", CW/2,22,2,
     m>=S.best?"#FFD447":"rgba(255,255,255,.6)",OUTLINE,"c");
   const face=["#FFFFFF","#FFFFFF","#FFF3C4","#FFE79A","#FFD447","#F6BE2C","#E0A21C"];
   t7arcade(x,m,CW/2,74,11,face,OUTLINE,"c");
